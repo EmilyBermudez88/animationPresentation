@@ -43,13 +43,15 @@
 .duration_example {
   height: 100px;
   position:relative;
+  border-bottom: 2px solid black;
   
-  img {
+  .duration_car {
     max-height: 100%;
     width: 100px;
     position:absolute;
     left: 0;
-    animation: car 3.5s ease-in infinite;
+    bottom: -13px;
+    animation: car 4s ease-in infinite;
   }
 }
 
@@ -58,7 +60,7 @@
       left: 0;
   }
   100% {
-      left: 100%;
+      left: calc(100% - 100px);
   }
 }
 

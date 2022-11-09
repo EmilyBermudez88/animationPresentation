@@ -245,20 +245,6 @@ body {
   color: rgb(77, 77, 77);
 }
 
-header {
-  background-color: rgb(1, 22, 50);
-  height: 250px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .wrapper {
   max-width: 1400px;
   width: 80%;
@@ -276,19 +262,7 @@ section:last-child {
 }
 
 h1, h2 {
-  text-align: center;
   color: rgb(248, 248, 248);
-}
-
-h1 {
-  line-height: 1.4;
-  font-size: 50px;
-}
-h1 span {
-  border-bottom: 5px solid rgb(186, 0, 109);
-}
-h1 span .and {
-  border-bottom: 5px solid rgb(1, 22, 50);
 }
 
 h2 {
@@ -296,6 +270,7 @@ h2 {
   padding: 10px 0;
   margin-top: 0;
   border-radius: 2px;
+  text-align: center;
 }
 
 h3 {
@@ -321,6 +296,70 @@ img {
   list-style: none;
 }
 
+header {
+  background-color: rgb(1, 22, 50);
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+h1 {
+  line-height: 1.4;
+  font-size: 50px;
+  margin-left: 100px;
+}
+h1 span {
+  border-bottom: 5px solid rgb(186, 0, 109);
+  display: inline-block;
+  color: rgb(248, 248, 248);
+}
+h1 .h1_transition {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  margin-right: 10px;
+}
+h1 .h1_transition:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  color: rgb(186, 0, 109);
+}
+h1 .h1_animation {
+  margin-left: 10px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-animation: typing 0.4s infinite alternate;
+          animation: typing 0.4s infinite alternate;
+}
+
+@-webkit-keyframes typing {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    color: rgb(186, 0, 109);
+  }
+}
+
+@keyframes typing {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    color: rgb(186, 0, 109);
+  }
+}
 .comparisons_container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -406,14 +445,16 @@ img {
 .duration_example {
   height: 100px;
   position: relative;
+  border-bottom: 2px solid black;
 }
-.duration_example img {
+.duration_example .duration_car {
   max-height: 100%;
   width: 100px;
   position: absolute;
   left: 0;
-  -webkit-animation: car 3.5s ease-in infinite;
-          animation: car 3.5s ease-in infinite;
+  bottom: -13px;
+  -webkit-animation: car 4s ease-in infinite;
+          animation: car 4s ease-in infinite;
 }
 
 @-webkit-keyframes car {
@@ -421,7 +462,7 @@ img {
     left: 0;
   }
   100% {
-    left: 100%;
+    left: calc(100% - 100px);
   }
 }
 
@@ -430,7 +471,7 @@ img {
     left: 0;
   }
   100% {
-    left: 100%;
+    left: calc(100% - 100px);
   }
 }
 .timing_examples {
@@ -859,8 +900,8 @@ img {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  -webkit-animation: falling_ball 2s linear normal 0.5s;
-          animation: falling_ball 2s linear normal 0.5s;
+  -webkit-animation: falling_ball 2s linear normal 0.5s paused;
+          animation: falling_ball 2s linear normal 0.5s paused;
 }
 .bouncing_ball .shadow {
   position: absolute;
@@ -964,17 +1005,13 @@ img {
   }
 }
 .snowflake {
-  font-size: 100px;
-  -webkit-animation: snow2 1000ms 2;
-          animation: snow2 1000ms 2;
-  -webkit-animation: snowy 1000ms 2;
-          animation: snowy 1000ms 2;
+  font-size: 150px;
+  -webkit-animation: snowy 1s infinite paused;
+          animation: snowy 1s infinite paused;
 }
-
-.snowflakeHolder {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.snowflake:hover {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 
 @-webkit-keyframes snowy {
@@ -996,25 +1033,5 @@ img {
   100% {
     -webkit-transform: rotateY(360deg);
             transform: rotateY(360deg);
-  }
-}
-@-webkit-keyframes snow2 {
-  0% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-  100% {
-    -webkit-transform: translateY(300px);
-            transform: translateY(300px);
-  }
-}
-@keyframes snow2 {
-  0% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-  100% {
-    -webkit-transform: translateY(300px);
-            transform: translateY(300px);
   }
 }

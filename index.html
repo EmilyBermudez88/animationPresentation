@@ -14,7 +14,7 @@
 </head>
 <body>
   <header>
-    <h1>Let's Talk About <br><span>Transitions<span class="and"> and </span>Animations</span></h1>
+    <h1>Let's Talk About <br><span class="h1_transition">Transitions</span> and <span class="h1_animation">Animations</span></h1>
   </header>
   <main class="wrapper">
     <section class="comparisons">
@@ -53,7 +53,7 @@
             <p>The time it takes in seconds or miliseconds from the beginning to the end of the transition / animation.</p>
           </div>
           <div class="css_properties_example duration_example">
-            <img src="./assets/car.png" alt="moving car"/>
+            <img src="./assets/cardrawing.png" alt="moving car" class="duration_car"/>
           </div>
         </div>
         <li class="properties css_properties_delay">
@@ -122,7 +122,7 @@
             </ul>
           </div>
           <div class="cubic_bezier_image">
-            <img src="./assets/cubic_bezier.jpg" alt="image of cubiz bezier graph"/>
+            <img src="./assets/cubicbezier.jpg" alt="image of cubiz bezier graph"/>
           </div>
         </li>
         <li class="properties css_properties_property">
@@ -259,14 +259,12 @@
               </p>
             </div>
             <div class="css_properties_example">
-              
+              <div class="snowflake_containerr">
+                <div class="snowflake">&#10052;</div> 
+            </div>
             </div>
           </li>
         </ul>
-        <div class="snowflakeHolder">
-          <div class="snowflake">&#10052;</div> 
-          <div class="snowflake">&#10052;</div> 
-      </div>
       </section>
 
       <section class="accessibility">
@@ -274,6 +272,8 @@
         <p>While animations can add interest, some users can find animations dizzying or distracting,
           and prefer to opt out of them in browser preferences.
         </p>
+        <p>The media query <em>@prefers-reduced-motion</em> can be used to tailor animations or transitions for
+        users that want either no movement or very little.</p>
       </section>
     </main>
 </body>
