@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Animation Fun</title>
+</head>
+<body>
+  <header>
+    <h1>Let's Talk About <br><span>Transitions<span class="and"> and </span>Animations</span></h1>
+  </header>
+  <main class="wrapper">
+    <section class="comparisons">
+      <h2>Transitions vs. Animations</h2>
+      <div class="comparisons_container">
+        <div class="comparisons_transition">
+          <h3>Transitions</h3>
+          <ul>
+              <li>only targets the start and end point</li>
+              <li>runs once</li>
+              <li>requires some form of trigger to run (ie. hover or focus)</li>
+          </ul>
+        </div>
+        <div class="comparisons_animation">
+            <h3>Animations</h3>
+            <ul>
+                <li>can target multiple points within the animation's timeline</li>
+                <li>runs as many times as specified</li>
+                <li>runs automatically (although can alter its behaviour to wait for a trigger)</li>
+            </ul>
+        </div>
+      </div>
+      <div class="comparisons_shared">
+        <ul>
+          <li>both can affect more than one CSS property</li>
+        </ul>
+      </div>
+    </section>
+        
+    <section class="shared_css_properties">
+      <h2>Shared CSS Properties</h2>
+      <ul>
+        <li class="properties css_properties_duration">
+          <div class="css_properties_text">
+            <h3>-duration</h3>
+            <p>The time it takes in seconds or miliseconds from the beginning to the end of the transition / animation.</p>
+          </div>
+          <div class="css_properties_example duration_example">
+            <img src="./assets/car.png" alt="moving car"/>
+          </div>
+        </div>
+        <li class="properties css_properties_delay">
+          <div class="css_properties_text">
+            <h3>-delay</h3>
+            <p>The delay in seconds or miliseconds before the transition / animation begins </p>
+          </div>
+          <div class="css_properties_example">
+            <p class="delay_example">hover here</p>
+          </div>
+        </li>
+        <li class="properties css_properties_timing">
+          <div class="css_properties_text">
+            <h3>-timing-function</h3>
+            <p>The relative speed of the animation as it moves through its lifecycle.</p>
+          </div>
+          <div class="css_properties_example">
+            <ul class="timing_examples">
+              <li>
+                <p>linear</p>
+                <div class="animation_container">
+                  <div class="linear"></div>
+                </div>
+              </li>
+              <li>
+                <p>ease</p>
+                <div class="animation_container">
+                  <div class="ease"></div>
+                </div>
+              </li>
+              <li>
+                <p>ease-out</p>
+                <div class="animation_container">
+                  <div class="easeOut"></div>
+                </div>
+              </li>
+              <li>
+                <p>ease-in</p>
+                <div class="animation_container">
+                  <div class="easeIn"></div>
+                </div>
+              </li>
+              <li>
+                <p>ease-in-out</p>
+                <div class="animation_container">
+                  <div class="easeInOut"></div>
+                </div>
+              </li>
+              <li>
+                <p>cubic-bezier</p>
+                <div class="animation_container">
+                  <div class="cubicBezier"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="cubic_bezier">
+          <div class="cubic_bezier_text">
+            <h4>What is a cubic bezier?</h4>
+            <ul>
+              <li>takes 4 values, representing the location of the two control points (P1 and P2)</li>
+              <li>first and third values are the x coordinates, with a value within the range of 0-1</li>
+              <li>second and fourth values are the y coordinates</li>
+              <li>the steeper the slope, the faster the animation / transition moves</li>
+            </ul>
+          </div>
+          <div class="cubic_bezier_image">
+            <img src="./assets/cubic_bezier.jpg" alt="image of cubiz bezier graph"/>
+          </div>
+        </li>
+        <li class="properties css_properties_property">
+          <div class="css_properties_text">
+            <h3>Property</h3>
+            <p>
+              Both animations and transitions require the dev to specify which CSS properties are being
+              targeted, although the syntax for transitions and animations are different. Common properties
+              include opacity, position (top/right/bottom/left), width and height, to name a few.
+            </p>
+          </div>
+          <div class="css_properties_example css_properties_transform">
+            <h4>Transform</h4>
+            <p>
+              The CSS <em>transform</em> property provides more opportunities for animations / transitions,
+              can 2D or 3D transformations.
+            </p>
+            <ul class="transform_examples">
+              <li>
+                <p>Scale()</p>
+                <div class="transform_examples_container">
+                  <ul>
+                    <li>Makes an element larger or smaller to its original size</li>
+                    <li> scale(2) makes an element 2x bigger, scale(0.5) makes it half as big</li>
+                  </ul>
+                  <div class="size_transition transform"></div>
+                </div>
+              </li>
+              <li>
+                <p>Translate(a,b) / TranslateX(a) / TranslateY(b)</p>
+                <div class="transform_examples_container">
+                  <ul>
+                    <li>Moves an element up/down/left/right by a certain % or pixels</li>
+                    <li>Negative X values will move the element left, and Y values, up</li>
+                  </ul>
+                  <div class="translate_transition transform"></div>
+                </div>
+              </li>
+              <li>
+                <p>Rotate() / RotateX() / RotateY()</p>
+                <div class="transform_examples_container">
+                  <ul>
+                    <li>Rotates the element in either a 2D or 3D plane</li>
+                    <li>To sepcify the degree of rotation, include a number followed by 'deg' (ie. rotate(45deg))</li>
+                    <li>Using rotateX() or rotateY() will rotate the element around the X or Y axis</li>
+                  </ul>
+                  <div class="rotation_transition transform"></div>
+                  <div class="rotationY_transition transform"></div>
+                </div>
+              </li>
+              <li>Other examples include skew and persepctive</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      </section>
+     
+
+      <section class="animations">
+        <h2>A Bit More About Animations</h2>
+        <p>
+          Animations are more complex than transitions, and offer additional CSS properties that offer greater control
+          and complexity
+        </p>
+        <ul>
+          <li class="properties css_properties_iteration">
+            <div class="css_properties_text">
+              <h3>-iteration-count</h3>
+              <p>
+                The number of times the animation should run. The default is once, but can be as high as the keyword
+                <em>infinite</em>
+              </p>
+            </div>
+            <div class="css_properties_example">
+              <div class="loader">
+                <span class="loader__element"></span>
+                <span class="loader__element"></span>
+                <span class="loader__element"></span>
+              </div>
+            </div>
+          </li>
+          <li class="properties css_properties_fill_mode">
+            <div class="css_properties_text">
+              <h3>-fill-mode</h3>
+              <p>
+                It determines the styles once the animation is complete (will it revert back to its original state,
+                or keep the styles applied at at the end of the animation
+              </p>
+              <ul>
+                <li>none: default (will revert back to original state</li>
+                <li>forwards: will retrain styles from the last keyframe</li>
+                <li>backwards: will retain its style from the first keyframe</li>
+                <li>both: will follow the rules for both forward and backwards </li>
+              </ul>
+            </div>
+            <div class="css_properties_example">
+              <div class="bar_chart">
+                <div class="bar"></div>
+                <div class="bar fill1"></div>
+                <div class="bar fill2"></div>
+                <div class="bar fill3"></div>
+                <div class="bar fill4"></div>
+                <div class="bar fill1"></div>
+                <div class="bar fill5"></div>
+                <div class="bar fill6"></div>
+                <div class="bar"></div>
+              </div>
+            </div>
+          </li>
+          <li class="properties css_properties_direction">
+            <div class="css_properties_text">
+              <h3>-direction</h3>
+              <p>Tells the animation the direction in which it should run</p>
+              <ul>
+                <li>normal: default (forwards)</li>
+                <li>reverse: backwards</li>
+                <li>alternate: alternate back and forth</li>
+                <li>alternate-reverse: alternate, but start backwards then run forwards </li>
+              </ul>
+            </div>
+            <div class="css_properties_example">
+              <div class="bouncing_ball">
+                <div class="shadow"></div>
+                <div class="ball"></div>
+              </div>
+            </div>
+          </li>
+          <li class="properties css_properties_iteration">
+            <div class="css_properties_text">
+              <h3>-play-state</h3>
+              <p>
+                Just like in transitions, you can force the animation to wait for an event to trigger it
+                (such as a hover / focus).
+              </p>
+            </div>
+            <div class="css_properties_example">
+              
+            </div>
+          </li>
+        </ul>
+        <div class="snowflakeHolder">
+          <div class="snowflake">&#10052;</div> 
+          <div class="snowflake">&#10052;</div> 
+      </div>
+      </section>
+
+      <section class="accessibility">
+        <h2>Accessibility</h2>
+        <p>While animations can add interest, some users can find animations dizzying or distracting,
+          and prefer to opt out of them in browser preferences.
+        </p>
+      </section>
+    </main>
+</body>
+</html>

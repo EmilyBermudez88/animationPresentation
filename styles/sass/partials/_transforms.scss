@@ -1,0 +1,39 @@
+.transform_examples {
+  p {
+    font-family: $codeFont;
+    font-size: 18px;
+    color: rgb(13,13,13);
+    background-color: $background;
+    padding: 5px;
+    display: inline-block;
+  }
+  .transform {
+    width: 120px;
+    height: 120px;
+    border: 2px solid $blueBackground;
+    background-color:$pinkHighlight;
+    transform: rotate(0deg);
+    transition: all 1s linear;
+  } 
+  &_container {
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+      width: 50%;
+    }
+  }
+}
+
+.transform_examples .size_transition:hover {
+  transform: scaleX(2);
+}
+.transform_examples .translate_transition:hover {
+  transform: translate(50px, -50px);
+}
+.transform_examples .rotation_transition:hover {
+  transform: rotate(180deg);
+}
+.transform_examples .rotationY_transition:hover {
+  transform: rotateY(180deg);
+}
