@@ -733,31 +733,38 @@ h1 .h1_animation {
   top: 0px;
   left: 18px;
   margin-top: 10px;
-  animation: fill 2s backwards reverse;
+  -webkit-animation: fill 2s forwards;
+          animation: fill 2s forwards;
 }
 
 .bar.fill1 {
-  animation: fill-1 2s backwards reverse;
+  -webkit-animation: fill-1 2s forwards;
+          animation: fill-1 2s forwards;
 }
 
 .bar.fill2 {
-  animation: fill-2 2s backwards reverse;
+  -webkit-animation: fill-2 2s forwards;
+          animation: fill-2 2s forwards;
 }
 
 .bar.fill3 {
-  animation: fill-3 2s backwards reverse;
+  -webkit-animation: fill-3 2s forwards;
+          animation: fill-3 2s forwards;
 }
 
 .bar.fill4 {
-  animation: fill-4 2s backwards reverse;
+  -webkit-animation: fill-4 2s forwards;
+          animation: fill-4 2s forwards;
 }
 
 .bar.fill5 {
-  animation: fill-5 2s backwards reverse;
+  -webkit-animation: fill-5 2s forwards;
+          animation: fill-5 2s forwards;
 }
 
 .bar.fill6 {
-  animation: fill-6 2s backwards reverse;
+  -webkit-animation: fill-6 2s forwards;
+          animation: fill-6 2s forwards;
 }
 
 @-webkit-keyframes fill {
