@@ -30,4 +30,15 @@
 .comparisons_shared {
   text-align: center;
   font-style: italic;
+  margin: 40px;
+}
+
+.coding_examples {
+  display: flex;
+  justify-content: space-evenly;
+  height: 330px;
+  // img:nth-child(1) {
+  //   max-width: 60%;
+  // }
+
 }

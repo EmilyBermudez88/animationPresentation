@@ -400,6 +400,17 @@ h1 .h1_animation {
 .comparisons_shared {
   text-align: center;
   font-style: italic;
+  margin: 40px;
+}
+
+.coding_examples {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 330px;
 }
 
 .properties {
