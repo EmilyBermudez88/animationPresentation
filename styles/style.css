@@ -320,8 +320,10 @@ h1 span {
 h1 .h1_transition {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-property: all;
+  transition-property: all;
   margin-right: 10px;
 }
 h1 .h1_transition:hover {
@@ -333,8 +335,14 @@ h1 .h1_animation {
   margin-left: 10px;
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-animation: typing 0.4s infinite alternate;
-          animation: typing 0.4s infinite alternate;
+  -webkit-animation-name: typing;
+          animation-name: typing;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
 }
 
 @-webkit-keyframes typing {
@@ -429,8 +437,12 @@ h1 .h1_animation {
   background-color: rgb(186, 0, 109);
   border: 2px solid rgb(186, 0, 109);
   color: rgb(244, 245, 251);
-  -webkit-transition: all 1s 0.7s;
-  transition: all 1s 0.7s;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-delay: 0.7s;
+          transition-delay: 0.7s;
   font-size: 20px;
 }
 .css_properties_delay .css_properties_example .delay_example {
@@ -453,8 +465,14 @@ h1 .h1_animation {
   position: absolute;
   left: 0;
   bottom: -13px;
-  -webkit-animation: car 4s ease-in infinite;
-          animation: car 4s ease-in infinite;
+  -webkit-animation-name: car;
+          animation-name: car;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 @-webkit-keyframes car {
@@ -497,8 +515,14 @@ h1 .h1_animation {
   left: 0;
   background-color: rgb(186, 0, 109);
   border: 1px solid rgb(244, 245, 251);
-  -webkit-animation: timing 5s linear 2 backwards;
-          animation: timing 5s linear 2 backwards;
+  -webkit-animation-name: timing;
+          animation-name: timing;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 .animation_container .easeIn {
@@ -584,8 +608,12 @@ h1 .h1_animation {
   background-color: rgb(186, 0, 109);
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
-  -webkit-transition: all 1s linear;
-  transition: all 1s linear;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
 }
 .transform_examples_container {
   display: -webkit-box;
@@ -643,54 +671,35 @@ h1 .h1_animation {
           justify-content: center;
 }
 
-.loader {
-  height: 100%;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.airplane_path {
+  height: 180px;
+  width: 180px;
+  border-top: 4px solid grey;
+  border-radius: 50%;
+  position: relative;
+  -webkit-animation: plane 5s linear 1;
+          animation: plane 5s linear 1;
+}
+.airplane_path img {
+  height: 80px;
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  -webkit-transform: rotate(100deg);
+          transform: rotate(100deg);
 }
 
-.loader__element {
-  background-color: rgb(1, 22, 50);
-  border-radius: 100%;
-  height: 20px;
-  width: 20px;
-  margin: 0 20px;
-}
-
-.loader__element:nth-child(1) {
-  -webkit-animation: preloader 1s ease-in-out alternate infinite;
-          animation: preloader 1s ease-in-out alternate infinite;
-}
-
-.loader__element:nth-child(2) {
-  -webkit-animation: preloader 1s ease-in-out alternate 0.4s infinite;
-          animation: preloader 1s ease-in-out alternate 0.4s infinite;
-}
-
-.loader__element:nth-child(3) {
-  -webkit-animation: preloader 1s ease-in-out alternate 0.8s infinite;
-          animation: preloader 1s ease-in-out alternate 0.8s infinite;
-}
-
-@-webkit-keyframes preloader {
+@-webkit-keyframes plane {
   100% {
-    -webkit-transform: scale(2);
-            transform: scale(2);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
-@keyframes preloader {
+@keyframes plane {
   100% {
-    -webkit-transform: scale(2);
-            transform: scale(2);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 .bar_chart {
@@ -900,8 +909,8 @@ h1 .h1_animation {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  -webkit-animation: falling_ball 2s linear normal 0.5s paused;
-          animation: falling_ball 2s linear normal 0.5s paused;
+  -webkit-animation: falling_ball 2s linear normal 0.5s;
+          animation: falling_ball 2s linear normal 0.5s;
 }
 .bouncing_ball .shadow {
   position: absolute;
@@ -1004,34 +1013,199 @@ h1 .h1_animation {
     background-color: rgb(213, 213, 213);
   }
 }
-.snowflake {
-  font-size: 150px;
-  -webkit-animation: snowy 1s infinite paused;
-          animation: snowy 1s infinite paused;
+.button {
+  background-color: rgb(1, 22, 50);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
 }
-.snowflake:hover {
+
+.loader {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loader__element {
+  background-color: rgb(1, 22, 50);
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  margin: 0 20px;
+}
+
+.loader__element:nth-child(1) {
+  -webkit-animation: preloader 1s ease-in-out alternate infinite paused;
+          animation: preloader 1s ease-in-out alternate infinite paused;
+}
+
+.loader__element:nth-child(2) {
+  -webkit-animation: preloader 1s ease-in-out alternate 0.4s infinite paused;
+          animation: preloader 1s ease-in-out alternate 0.4s infinite paused;
+}
+
+.loader__element:nth-child(3) {
+  -webkit-animation: preloader 1s ease-in-out alternate 0.8s infinite paused;
+          animation: preloader 1s ease-in-out alternate 0.8s infinite paused;
+}
+
+.start {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.start:checked + .loader .loader__element {
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
 
-@-webkit-keyframes snowy {
-  0% {
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
+@-webkit-keyframes preloader {
   100% {
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
+    -webkit-transform: scale(2);
+            transform: scale(2);
   }
 }
 
-@keyframes snowy {
+@keyframes preloader {
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+.accessibility_example {
+  margin-top: 50px;
+}
+
+.pulse_example {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 8px;
+  border: 2px solid rgb(186, 0, 109);
+  -webkit-animation: pulse 0.3s infinite alternate;
+          animation: pulse 0.3s infinite alternate;
+}
+
+@media (prefers-reduced-motion) {
+  .pulse_example {
+    -webkit-animation: pulse_accessible 1.5s infinite alternate;
+            animation: pulse_accessible 1.5s infinite alternate;
+  }
+}
+@-webkit-keyframes pulse {
   0% {
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
+    background-color: transparent;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   100% {
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
+    background-color: rgba(186, 0, 109, 0.3);
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+    color: rgb(255, 255, 255);
+  }
+}
+@keyframes pulse {
+  0% {
+    background-color: transparent;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    background-color: rgba(186, 0, 109, 0.3);
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+    color: rgb(255, 255, 255);
+  }
+}
+@-webkit-keyframes pulse_accessible {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: rgba(186, 0, 109, 0.3);
+  }
+}
+@keyframes pulse_accessible {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: rgba(186, 0, 109, 0.3);
+  }
+}
+.accessibility_example .loader {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.accessibility_example .loader__element {
+  background-color: rgb(1, 22, 50);
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  margin: 0 30px;
+}
+.accessibility_example .loader__element:nth-child(1) {
+  -webkit-animation: preloader 0.6s ease-in-out alternate infinite;
+          animation: preloader 0.6s ease-in-out alternate infinite;
+}
+.accessibility_example .loader__element:nth-child(2) {
+  -webkit-animation: preloader 0.6s ease-in-out alternate 0.2s infinite;
+          animation: preloader 0.6s ease-in-out alternate 0.2s infinite;
+}
+.accessibility_example .loader__element:nth-child(3) {
+  -webkit-animation: preloader 0.6s ease-in-out alternate 0.4s infinite;
+          animation: preloader 0.6s ease-in-out alternate 0.4s infinite;
+}
+@media (prefers-reduced-motion) {
+  .accessibility_example .loader__element:nth-child(1) {
+    -webkit-animation: preloader_accessible 1.5s ease-in-out alternate infinite;
+            animation: preloader_accessible 1.5s ease-in-out alternate infinite;
+  }
+  .accessibility_example .loader__element:nth-child(2) {
+    -webkit-animation: preloader_accessible 1.5s ease-in-out alternate 0.6s infinite;
+            animation: preloader_accessible 1.5s ease-in-out alternate 0.6s infinite;
+  }
+  .accessibility_example .loader__element:nth-child(3) {
+    -webkit-animation: preloader_accessible 1.5s ease-in-out alternate 1.2s infinite;
+            animation: preloader_accessible 1.5s ease-in-out alternate 1.2s infinite;
+  }
+}
+@keyframes preloader {
+  100% {
+    -webkit-transform: scale(2.2);
+            transform: scale(2.2);
+  }
+}
+@-webkit-keyframes preloader_accessible {
+  100% {
+    background-color: rgb(170, 170, 170);
+  }
+}
+@keyframes preloader_accessible {
+  100% {
+    background-color: rgb(170, 170, 170);
   }
 }

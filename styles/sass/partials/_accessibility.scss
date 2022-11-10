@@ -1,0 +1,88 @@
+.accessibility_example {
+  margin-top: 50px;
+}
+
+.pulse_example {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 8px;
+  border: 2px solid $pinkHighlight;
+  animation: pulse 0.3s infinite alternate;
+}
+
+@media (prefers-reduced-motion) {
+  .pulse_example {
+    animation: pulse_accessible 1.5s infinite alternate;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: transparent;
+    transform: scale(1);
+  }
+  100% {
+    background-color: rgba($pinkHighlight, 0.3);
+    transform: scale(1.5);
+    color: rgb(255, 255, 255);
+  }
+}
+
+@keyframes pulse_accessible {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: rgba($pinkHighlight, 0.3);
+  }
+}
+
+.accessibility_example {
+  .loader {
+    height: 100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+  }
+  
+  .loader__element {
+    background-color: $blueBackground;
+    border-radius: 100%;
+    height: 20px;
+    width: 20px;
+    margin: 0 30px;
+  }
+  
+  .loader__element:nth-child(1) {
+    animation: preloader 0.6s ease-in-out alternate infinite;
+  }
+  .loader__element:nth-child(2) {
+    animation: preloader 0.6s ease-in-out alternate .2s infinite;
+  }
+  
+  .loader__element:nth-child(3) {
+      animation: preloader 0.6s ease-in-out alternate .4s infinite;
+  }
+
+  @media (prefers-reduced-motion) {
+    .loader__element:nth-child(1) {
+      animation: preloader_accessible 1.5s ease-in-out alternate infinite;
+    }
+    .loader__element:nth-child(2) {
+      animation: preloader_accessible 1.5s ease-in-out alternate .6s infinite;
+    }
+    
+    .loader__element:nth-child(3) {
+        animation: preloader_accessible 1.5s ease-in-out alternate 1.2s infinite;
+    }
+  }
+  @keyframes preloader {
+    100% { transform: scale(2.2); }
+  }
+  @keyframes preloader_accessible {
+    100% { background-color: rgb(170, 170, 170); }
+  }
+}
