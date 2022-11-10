@@ -688,8 +688,14 @@ h1 .h1_animation {
   border-top: 4px solid grey;
   border-radius: 50%;
   position: relative;
-  -webkit-animation: plane 5s linear 1;
-          animation: plane 5s linear 1;
+  -webkit-animation-name: plane;
+          animation-name: plane;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
 }
 .airplane_path img {
   height: 80px;
@@ -724,43 +730,34 @@ h1 .h1_animation {
 .bar {
   position: relative;
   height: 12px;
-  background: #6a6a6a;
-  width: 0%;
   top: 0px;
   left: 18px;
   margin-top: 10px;
-  -webkit-animation: fill 2s forwards;
-          animation: fill 2s forwards;
+  animation: fill 2s backwards reverse;
 }
 
 .bar.fill1 {
-  -webkit-animation: fill-1 2s forwards;
-          animation: fill-1 2s forwards;
+  animation: fill-1 2s backwards reverse;
 }
 
 .bar.fill2 {
-  -webkit-animation: fill-2 2s forwards;
-          animation: fill-2 2s forwards;
+  animation: fill-2 2s backwards reverse;
 }
 
 .bar.fill3 {
-  -webkit-animation: fill-3 2s forwards;
-          animation: fill-3 2s forwards;
+  animation: fill-3 2s backwards reverse;
 }
 
 .bar.fill4 {
-  -webkit-animation: fill-4 2s forwards;
-          animation: fill-4 2s forwards;
+  animation: fill-4 2s backwards reverse;
 }
 
 .bar.fill5 {
-  -webkit-animation: fill-5 2s forwards;
-          animation: fill-5 2s forwards;
+  animation: fill-5 2s backwards reverse;
 }
 
 .bar.fill6 {
-  -webkit-animation: fill-6 2s forwards;
-          animation: fill-6 2s forwards;
+  animation: fill-6 2s backwards reverse;
 }
 
 @-webkit-keyframes fill {
@@ -920,8 +917,14 @@ h1 .h1_animation {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  -webkit-animation: falling_ball 2s linear normal 0.5s;
-          animation: falling_ball 2s linear normal 0.5s;
+  -webkit-animation-name: falling_ball;
+          animation-name: falling_ball;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: normal;
+          animation-timing-function: normal;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
 }
 .bouncing_ball .shadow {
   position: absolute;
@@ -933,8 +936,12 @@ h1 .h1_animation {
   height: 5px;
   width: 60px;
   background-color: rgb(244, 245, 251);
-  -webkit-animation: shadow_darken 1.8s 0.7s;
-          animation: shadow_darken 1.8s 0.7s;
+  -webkit-animation-name: shadow_darken;
+          animation-name: shadow_darken;
+  -webkit-animation-duration: 1.8s;
+          animation-duration: 1.8s;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
 }
 
 @-webkit-keyframes falling_ball {
